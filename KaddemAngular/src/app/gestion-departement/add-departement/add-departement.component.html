@@ -1,0 +1,18 @@
+<form [formGroup]="reactiveForm" >
+
+    <div class="col-sm-12 col-xl-10">
+        <div class="bg-light rounded h-100 p-4">
+      <h4 >Nom departement</h4>
+      <div class="mt-6">
+          <div>
+              <input type="text"formControlName="nomDepart" class="form-control" name="nomDepart"  id="nomDepart">
+          </div>
+          <div [ngStyle]="{'color':'red'}"  *ngIf="nomDepart?.errors?.['required'] && nomDepart?.touched"> NomDepart is required</div>
+
+      </div >
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="Add()" >Ajouter</button>
+    </div>
+  </form>
+
+

@@ -1,0 +1,37 @@
+<form [formGroup]="reactiveForm">
+<div class="col-sm-12 col-xl-10">
+        <div class="bg-light rounded h-100 p-4">
+    <div class="card-body">
+        <h4 class="card-title">First Name Employee</h4>
+        <div class="mt-4">
+            <div class="form-group">
+                <input type="text"formControlName="firstName" class="form-control" name="firstName"  id="firstName">
+            </div>
+            <div [ngStyle]="{'color':'red'}" class="alter alter-danger" id="updateField" *ngIf="firstName?.errors?.['required'] && firstName?.touched" > FirstName is required</div>
+
+        </div >
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Last Name Employee</h4>
+        <div class="mt-4">
+            <div class="form-group">
+                <input type="text"formControlName="lastName" class="form-control" name="lastName"  id="lastName">
+            </div>
+            <div [ngStyle]="{'color':'red'}" class="alter alter-danger" id="updateField" *ngIf="lastName?.errors?.['required'] && lastName?.touched" > LastName is required</div>
+
+        </div >
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Solde Employee</h4>
+        <div class="mt-4">
+            <div class="form-group">
+                <input type="text"formControlName="solde" class="form-control" name="solde"  id="solde">
+            </div>
+            <div [ngStyle]="{'color':'red'}" class="alter alter-danger" id="updateField" *ngIf="solde?.errors?.['required'] && solde?.touched" > Solde is required</div>
+
+        </div >
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="update()">update </button>
+        </div>
+</div>
+    </form>

@@ -1,0 +1,31 @@
+<div class="col-12">
+  <div class="bg-light rounded h-100 p-4">
+      <h4 class="mb-4">Table Departement</h4>
+      <div class="table-responsive">
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th scope="col">Id Departement</th>
+                      <th scope="col">Nom Departement</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr role="row" class="odd" *ngFor="let l of list">
+                  <td>{{l.idDepart}}</td>
+                  <td>{{l.nomDepart}}</td>
+                  <td>
+                    <button type="button" style="margin-right: 20px;" (click)="DeleteDepart(l.idDepart)" class="btn btn-danger" data-toggle="modal" data-target="#danger-alert-modal">Delete</button>
+                    <a [routerLink]="['update',l.idDepart]" class="btn waves-effect waves-light btn-warning">
+                     Edit</a>
+
+                </td>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+    </div>
+                    <a [routerLink]="['add']">Ajouter Departement</a>
+</div>
+
+
+

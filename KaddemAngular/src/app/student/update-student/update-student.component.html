@@ -1,0 +1,44 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<div class="updateModal  ">
+<form  [formGroup]="reactiveForm" (ngSubmit)="updateStudent()">
+    <div>
+        <h1 style="font-family: 'Anton', sans-serif;">Update student</h1>
+    </div>
+    <div class="form-group">
+        <label for="fn">First Name</label>
+        <input type="text" class="in form-control" id="fn" formControlName="firstName" placeholder="Enter your first name">
+        <small *ngIf="reactiveForm.get('firstName')?.errors?.['minlength'] && reactiveForm.get('firstName')?.touched "
+        style="color: red;">
+            Name should be longer then 3 characters</small> 
+            <small *ngIf="reactiveForm.get('firstName')?.errors?.['required']  && reactiveForm.get('firstName')?.touched "
+            style="color: red;">
+                Name is required</small>     
+      </div>
+    <div class="form-group">
+        <label for="ln">last Name :</label>
+        <input type="text" class="in form-control" id="ln" formControlName="lastName" placeholder="Enter your last name">
+        <small *ngIf="reactiveForm.get('lastName')?.errors?.['required']  && reactiveForm.get('lastName')?.touched "
+        style="color: red;">
+            Last Name is required</small>     
+    </div>
+    <div class="form-group">
+        <label for="opt">Select you option:</label>
+        <select class="form-control" id="opt" formControlName="option"  aria-label="Default select example">
+            <option value="Twin">Twin</option>
+            <option value="Sim">Sim</option>
+            <option value="Nids">Nids</option>
+            <option value="Gamix">Gamix</option>
+          </select>
+          <small *ngIf="reactiveForm.get('option')?.errors?.['required']  && reactiveForm.get('option')?.touched "
+          style="color: red;">
+              Option is required</small>     
+    </div>
+    <br>
+      
+      <button [disabled]="reactiveForm.invalid" type="submit" class="btn btn-primary">Update</button>
+</form>
+
+
+</div>
+

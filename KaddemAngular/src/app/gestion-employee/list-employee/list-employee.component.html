@@ -1,0 +1,34 @@
+<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h4 class="mb-4">Table Employee</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Id Employe</th>
+                        <th scope="col">First Name Employe</th>
+                        <th scope="col">Last Name Employe</th>
+                        <th scope="col">Solde Employe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr role="row" class="odd" *ngFor="let le of listE">
+                    <td>{{le.idEmp}}</td>
+                    <td>{{le.firstName}}</td>
+                    <td>{{le.lastName}}</td>
+                    <td>{{le.solde}}</td>
+                    <td>
+                      <button type="button" style="margin-right: 20px;" (click)="DeleteEmploye(le.idEmp)" class="btn btn-danger" data-toggle="modal" data-target="#danger-alert-modal">Delete</button>
+                      <a [routerLink]="['updateE',le.idEmp]" class="btn waves-effect waves-light btn-warning">Edit</a>
+
+                  </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+                      <a [routerLink]="['addE']">Ajouter Employee</a>
+  </div>
+
+
+

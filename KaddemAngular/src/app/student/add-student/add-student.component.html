@@ -1,0 +1,85 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<form  [formGroup]="reactiveForm" (ngSubmit)="addStudent()">
+    <div>
+        <h1 style="font-family: 'Anton', sans-serif;">Add new student</h1>
+    </div>
+    <div class="form-group">
+        <label for="fn">First Name :</label>
+        <input type="text" class="in form-control" id="fn" formControlName="firstName" placeholder="Enter your first name">
+        <small *ngIf="reactiveForm.get('firstName')?.errors?.['minlength'] && reactiveForm.get('firstName')?.touched "
+        style="color: red;">
+            Name should be longer then 3 characters</small> 
+            <small *ngIf="reactiveForm.get('firstName')?.errors?.['required']  && reactiveForm.get('firstName')?.touched "
+            style="color: red;">
+                Name is required</small>     
+      </div>
+    <div class="form-group">
+        <label for="ln">last Name :</label>
+        <input type="text" class="in form-control" id="ln" formControlName="lastName" placeholder="Enter your last name">
+        <small *ngIf="reactiveForm.get('lastName')?.errors?.['required']  && reactiveForm.get('lastName')?.touched "
+        style="color: red;">
+            Last Name is required</small>     
+    </div>
+    <div class="form-group">
+        <label for="opt">Select you option:</label>
+        <select class="form-control" id="opt" formControlName="option"  aria-label="Default select example">
+            <option value="Twin">Twin</option>
+            <option value="Sim">Sim</option>
+            <option value="Nids">Nids</option>
+            <option value="Gamix">Gamix</option>
+          </select>
+          <small *ngIf="reactiveForm.get('option')?.errors?.['required']  && reactiveForm.get('option')?.touched "
+          style="color: red;">
+              Option is required</small>     
+    </div>
+    <div></div>
+    <br>     
+        <!-- <button  class="btn btn-primary" (click)="skills()">Add skills</button> -->
+      <button [disabled]="reactiveForm.invalid" type="submit" class="btn btn-primary" >Submit</button>
+</form>
+
+
+<!-- skills form -->
+
+
+<!-- <form *ngIf="ShSkillsform" [formGroup]="Skillsform" (ngSubmit)="addWithCompetence()">
+    <div>
+        <h1>Add skills </h1>
+    </div>
+    <div class="form-group">
+        <label for="sn">Skill's name</label>
+        <input type="text" class="form-control" id="sn" formControlName="nomCompetence" placeholder="Something you re good at ">
+        <small *ngIf="Skillsform.get('nomCompetence')?.errors?.['minlength'] && Skillsform.get('nomCompetence')?.touched "
+        style="color: red;">
+            Name should be longer then 3 characters</small> 
+            <small *ngIf="reactiveForm.get('nomCompetence')?.errors?.['required']  && reactiveForm.get('nomCompetence')?.touched "
+            style="color: red;">
+                Name is required</small>     
+      </div>
+      <div class="form-group">
+        <label for="tp">Select the type:</label>
+        <select class="form-control" id="tp" formControlName="type"  aria-label="Default select example">
+            <option value="SOFT_SKILL">Soft skill</option>
+            <option value="HARD_SKILL">Hard skill</option>
+          </select>
+          <small *ngIf="Skillsform.get('type')?.errors?.['required']  && Skillsform.get('type')?.touched "
+          style="color: red;">
+              Type is required</small>     
+    </div>
+    <div class="form-group">
+        <label for="nvc">Select your level</label>
+        <select class="form-control" id="nvc" formControlName="niveauC"  aria-label="Default select example">
+            <option value="Assez_bien">medium</option>
+            <option value=" Bien">Good</option>
+            <option value="Tres_Bien">very good</option>
+            <option value="Excellent">Excellent</option>
+          </select>
+          <small *ngIf="reactiveForm.get('niveauC')?.errors?.['required']  && reactiveForm.get('niveauC')?.touched "
+          style="color: red;">
+              Level is required</small>     
+    </div>
+    <br>      
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+

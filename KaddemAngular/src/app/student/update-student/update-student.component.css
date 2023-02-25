@@ -1,0 +1,14 @@
+.in{
+    border: none;
+    border-radius: 0%;
+    background-color: whitesmoke;
+    color: black;
+    border-bottom: 1px solid gray;
+    width: 400px;
+}
+.updateModal{
+    display: flex;
+    position: relative;
+
+}
+
